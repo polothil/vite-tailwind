@@ -10,16 +10,14 @@ import './App.css';
 function App() {
   return (
     <div>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route exact path='/vite-tailwind/' element={<Home />} />
-          <Route path='/vite-tailwind/services' element={<Services />} />
-          <Route path='/vite-tailwind/about' element={<AboutUs />} />
-          <Route path='/vite-tailwind/contact' element={<Contact />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <Navbar />
+      <Routes>
+        <Route exact path='/vite-tailwind/' element={<Home />} />
+        <Route path='/vite-tailwind/services' element={<Services />} />
+        <Route path='/vite-tailwind/about' element={<AboutUs />} />
+        <Route path='/vite-tailwind/contact' element={<Contact />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
