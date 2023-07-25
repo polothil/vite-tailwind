@@ -12,10 +12,10 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route exact path='/vite-tailwind' element={<Home />} />
-        <Route path='/vite-tailwind/services' element={<Services />} />
-        <Route path='/vite-tailwind/about' element={<AboutUs />} />
-        <Route path='/vite-tailwind/contact' element={<Contact />} />
+        <Route exact path='/' element={<Home />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/about' element={<AboutUs />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </div>
