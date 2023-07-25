@@ -3,10 +3,10 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'Services', href: '/services', current: false },
-  { name: 'About Us', href: '/about', current: false },
-  { name: 'Contact', href: '/contact', current: false },
+  { name: 'Home', href: '/vite-tailwind/', current: true },
+  { name: 'Services', href: '/vite-tailwind/services', current: false },
+  { name: 'About Us', href: '/vite-tailwind/about', current: false },
+  { name: 'Contact', href: '/vite-tailwind/contact', current: false },
 ];
 
 function classNames(...classes) {
