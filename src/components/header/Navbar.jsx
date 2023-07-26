@@ -1,12 +1,12 @@
-import { Fragment } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Home', href: '/vite-tailwind/', current: true },
-  { name: 'Services', href: '/vite-tailwind/services', current: false },
-  { name: 'About Us', href: '/vite-tailwind/about', current: false },
-  { name: 'Contact', href: '/vite-tailwind/contact', current: false },
+  { name: 'Home', link: '/' },
+  { name: 'Services', link: '/services' },
+  { name: 'About Us', link: '/about' },
+  { name: 'Contact', link: '/contact' },
 ];
 
 function classNames(...classes) {
@@ -42,9 +42,9 @@ export default function Example() {
                 <div className='hidden sm:ml-6 sm:block'>
                   <div className='flex space-x-4'>
                     {navigation.map((item) => (
-                      <a
+                      <h6
                         key={item.name}
-                        href={item.href}
+                        // href={item.href}
                         className={classNames(
                           item.current
                             ? 'bg-gray-900 text-white'
@@ -53,8 +53,8 @@ export default function Example() {
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
-                        {item.name}
-                      </a>
+                        <Link to={item.link}>{item.name}</Link>
+                      </h6>
                     ))}
                   </div>
                 </div>
@@ -142,8 +142,7 @@ export default function Example() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as='a'
-                  href={item.href}
+                  as='h6'
                   className={classNames(
                     item.current
                       ? 'bg-gray-900 text-white'
@@ -152,7 +151,7 @@ export default function Example() {
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
-                  {item.name}
+                  <Link to={item.link}>{item.name}</Link>
                 </Disclosure.Button>
               ))}
             </div>
