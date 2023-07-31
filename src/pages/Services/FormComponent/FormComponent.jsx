@@ -23,15 +23,33 @@ const FormComponent = () => {
       ...prevFormData,
       [name]: value,
     }));
-
-    // setFormErrors(validate(formData));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    // const params = new URLSearchParams();
+    // for (const [key, value] of Object.entries(formData)) {
+    //   params.append(key, value);
+    // }
+    // const encodedString = params.toString();
+    // console.log('%c encodedString: ', 'color: #f00', encodedString);
+
+    // console.log('%c data:  ', 'color: #f00', $('#gform').serialize());
+
+    $.ajax({
+      url: 'https://script.google.com/macros/s/AKfycbz2FVXCrY9oDnXvq15NGpKUAcpS_f0-zBkGS8k4Nj8VTsg25xTjQrMXY1fEjACszjBe/exec',
+      data: formData,
+      method: 'post',
+      success: function (response) {
+        console.log('%c response: ', 'color: #f00', response);
+        alert('Form submitted successfully');
+        handleClearForm();
+      },
+      error: function (err) {
+        alert('Something Error');
+      },
+    });
   };
 
   const handleClearForm = () => {
@@ -101,7 +119,14 @@ const FormComponent = () => {
             Book Our Services
           </h2>
         </div>
-        <form className='mt-8 space-y-6' onSubmit={handleSubmit}>
+        <form
+          className='mt-8 space-y-6'
+          onSubmit={handleSubmit}
+          encType='multipart/form-data'
+          // action='https://script.google.com/macros/s/AKfycbx1nl6_BAWARfvfHli_Vg8RhIiv9xRDcVzeOA_fuu2KTVRTz13X5qkaC7kgf5BEcILw/exec'
+          // method='POST'
+          id='gform'
+        >
           <div>
             <label htmlFor='name' className='block text-sm font-medium text-gray-700'>
               Name
@@ -184,7 +209,7 @@ const FormComponent = () => {
                 id='message'
                 name='message'
                 value={formData.message}
-                rows='4'
+                rows='7'
                 required
                 onBlur={handleValidation}
                 onChange={handleChange}
