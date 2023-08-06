@@ -38,7 +38,7 @@ const FormComponent = () => {
     // console.log('%c data:  ', 'color: #f00', $('#gform').serialize());
 
     $.ajax({
-      url: 'https://script.google.com/macros/s/AKfycbz2FVXCrY9oDnXvq15NGpKUAcpS_f0-zBkGS8k4Nj8VTsg25xTjQrMXY1fEjACszjBe/exec',
+      url: 'https://script.google.com/macros/s/AKfycbz6bMyzvA1g2TRsbAJZWpZ3q7DlcQWVCT_7pRWpXun7xZlmT91A1Xu67I371EMxUMmk/exec',
       data: formData,
       method: 'post',
       success: function (response) {
@@ -112,7 +112,7 @@ const FormComponent = () => {
   };
 
   return (
-    <div className='flex justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8'>
+    <div className='flex justify-center  py-12 px-4 sm:px-6 lg:px-8'>
       <div className='w-full max-w-md space-y-8'>
         <div>
           <h2 className='mt-6 text-center text-3xl font-extrabold text-gray-900'>
